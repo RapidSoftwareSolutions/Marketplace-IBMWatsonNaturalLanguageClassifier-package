@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/IBMWatsonNaturalLanguageClassifier/getClassifierInformation', function ($request, $response, $args) {
+$app->post('/api/IBMWatsonNLC/getClassifierInformation', function ($request, $response, $args) {
     
     $checkRequest = $this->validation;
     $validateRes = $checkRequest->validate($request, ['username','password','classifierId']);

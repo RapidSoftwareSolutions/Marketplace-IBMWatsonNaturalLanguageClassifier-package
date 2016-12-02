@@ -9,7 +9,7 @@ The Natural Language Classifier service can help your application understand the
 2. Connect Natural Language Classifier to your application at the left side, choose pricing plan and click on 'Create' button at the bottom of the page.
 3. Click on 'Service Credentials' tab to see your username and password.
 
-## IBMWatsonNaturalLanguageClassifier.createClassifier
+## IBMWatsonNLC.createClassifier
 Sends data to create and train a classifier and returns information about the new classifier.
 
 | Field       | Type       | Description
@@ -28,7 +28,7 @@ Is it hot outside?,temperature
 Is it windy?,conditions
 ```
 
-## IBMWatsonNaturalLanguageClassifier.listClassifiers
+## IBMWatsonNLC.listClassifiers
 Retrieves the list of classifiers for the service instance. Returns an empty array if no classifiers are available.
 
 | Field   | Type       | Description
@@ -37,7 +37,7 @@ Retrieves the list of classifiers for the service instance. Returns an empty arr
 | password| credentials| Required: password obtained from IBM Bluemix.
 
 
-## IBMWatsonNaturalLanguageClassifier.getClassifierInformation
+## IBMWatsonNLC.getClassifierInformation
 Returns status and other information about a classifier.
 
 | Field       | Type       | Description
@@ -47,7 +47,7 @@ Returns status and other information about a classifier.
 | classifierId| String     | Required: Classifier ID to query.
 
 
-## IBMWatsonNaturalLanguageClassifier.classify
+## IBMWatsonNLC.classify
 Returns label information for the input.
 
 | Field       | Type       | Description
@@ -58,7 +58,7 @@ Returns label information for the input.
 | text        | String     | Required: Phrase to classify.
 
 
-## IBMWatsonNaturalLanguageClassifier.deleteClassifier
+## IBMWatsonNLC.deleteClassifier
 Deletes a classifier.
 
 | Field       | Type       | Description

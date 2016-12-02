@@ -19,7 +19,7 @@ class IBMWatsonNaturalLanguageClassifierTest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/IBMWatsonNaturalLanguageClassifier/createClassifier', $post_data);
+        $response = $this->runApp('POST', '/api/IBMWatsonNLC/createClassifier', $post_data);
         
         $classifierId = json_decode($response->getBody())->contextWrites->to->classifier_id;
 
@@ -41,7 +41,7 @@ class IBMWatsonNaturalLanguageClassifierTest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/IBMWatsonNaturalLanguageClassifier/listClassifiers', $post_data);
+        $response = $this->runApp('POST', '/api/IBMWatsonNLC/listClassifiers', $post_data);
         
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertNotEmpty($response->getBody());
@@ -63,7 +63,7 @@ class IBMWatsonNaturalLanguageClassifierTest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/IBMWatsonNaturalLanguageClassifier/getClassifierInformation', $post_data);
+        $response = $this->runApp('POST', '/api/IBMWatsonNLC/getClassifierInformation', $post_data);
         
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertNotEmpty($response->getBody());
@@ -83,7 +83,7 @@ class IBMWatsonNaturalLanguageClassifierTest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/IBMWatsonNaturalLanguageClassifier/classify', $post_data);
+        $response = $this->runApp('POST', '/api/IBMWatsonNLC/classify', $post_data);
         
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertNotEmpty($response->getBody());
@@ -105,7 +105,7 @@ class IBMWatsonNaturalLanguageClassifierTest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/IBMWatsonNaturalLanguageClassifier/deleteClassifier', $post_data);
+        $response = $this->runApp('POST', '/api/IBMWatsonNLC/deleteClassifier', $post_data);
         
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertNotEmpty($response->getBody());

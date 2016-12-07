@@ -1,177 +1,153 @@
 {
-  "package": "IBMWatsonNLC",
-  "tagline": "IBM Watson Natural Language Classifier API",
-  "description": "The Natural Language Classifier service can help your application understand the language of short texts and make predictions about how to handle them.",
-  "image": "http://logo.clearbit.com/bluemix.com",
-  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-IBMWatsonNaturalLanguageClassifier-package",
-  "accounts": {
-    "domain": "ibm.com",
-    "credentials": [
-      "username",
-      "password"
-    ]
-  },
-  "blocks": [
-    {
-      "name": "createClassifier",
-      "description": "Sends data to create and train a classifier and returns information about the new classifier.",
-      "args": [
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Required: username obtained from IBM Bluemix."
-        },
-        {
-          "name": "password",
-          "type": "credentials",
-          "info": "Required: password obtained from IBM Bluemix."
-        },
-        {
-          "name": "trainingData",
-          "type": "String",
-          "info": "Required: Training data In the CSV format. Each text value must have at least one class. The data can include up to 15,000 records."
-        },
-        {
-          "name": "language",
-          "type": "String",
-          "info": "Required: The language of the data. Specify the language with the 2-letter primary language code as assigned in ISO standard 639. Supported languages are English (en), Arabic (ar), French (fr), German, (de), Italian (it), Japanese (ja), Portuguese (pt), and Spanish (es)."
-        },
-        {
-          "name": "name",
-          "type": "String",
-          "info": "Optional: The name of the data to identify the classifier."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }, {
-      "name": "listClassifiers",
-      "description": "Retrieves the list of classifiers for the service instance. Returns an empty array if no classifiers are available.",
-      "args": [
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Required: username obtained from IBM Bluemix."
-        },
-        {
-          "name": "password",
-          "type": "credentials",
-          "info": "Required: password obtained from IBM Bluemix."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }, {
-      "name": "getClassifierInformation",
-      "description": "Returns status and other information about a classifier.",
-      "args": [
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Required: username obtained from IBM Bluemix."
-        },
-        {
-          "name": "password",
-          "type": "credentials",
-          "info": "Required: password obtained from IBM Bluemix."
-        },
-        {
-          "name": "classifierId",
-          "type": "String",
-          "info": "Required: Classifier ID to query."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }, {
-      "name": "classify",
-      "description": "Returns label information for the input.",
-      "args": [
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Required: username obtained from IBM Bluemix."
-        },
-        {
-          "name": "password",
-          "type": "credentials",
-          "info": "Required: password obtained from IBM Bluemix."
-        },
-        {
-          "name": "classifierId",
-          "type": "String",
-          "info": "Required: Classifier ID to query."
-        },
-        {
-          "name": "text",
-          "type": "String",
-          "info": "Required: Phrase to classify."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }, {
-      "name": "deleteClassifier",
-      "description": "Deletes a classifier.",
-      "args": [
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Required: username obtained from IBM Bluemix."
-        },
-        {
-          "name": "password",
-          "type": "credentials",
-          "info": "Required: password obtained from IBM Bluemix."
-        },
-        {
-          "name": "classifierId",
-          "type": "String",
-          "info": "Required: Classifier ID to delete."
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    }
-  ]
+    "package": "IBMWatsonNLC",
+    "tagline": "IBM Watson Natural Language Classifier API",
+    "description": "The Natural Language Classifier service can help your application understand the language of short texts and make predictions about how to handle them.",
+    "image": "http:\/\/logo.clearbit.com\/bluemix.com",
+    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-IBMWatsonNaturalLanguageClassifier-package",
+    "keywords": ["API", "training"],
+    "accounts": {
+        "domain": "ibm.com",
+        "credentials": ["username", "password"]
+    },
+    "blocks": [{
+            "name": "createClassifier",
+            "description": "Sends data to create and train a classifier and returns information about the new classifier.",
+            "args": [{
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "username obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "password obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "trainingData",
+                    "type": "File",
+                    "info": "Training data In the CSV format. Each text value must have at least one class. The data can include up to 15,000 records.",
+                    "required": true
+                }, {
+                    "name": "language",
+                    "type": "String",
+                    "info": "The language of the data. Specify the language with the 2-letter primary language code as assigned in ISO standard 639. Supported languages are English (en), Arabic (ar), French (fr), German, (de), Italian (it), Japanese (ja), Portuguese (pt), and Spanish (es).",
+                    "required": true
+                }, {
+                    "name": "name",
+                    "type": "String",
+                    "info": "The name of the data to identify the classifier.",
+                    "required": false
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }, {
+            "name": "listClassifiers",
+            "description": "Retrieves the list of classifiers for the service instance. Returns an empty array if no classifiers are available.",
+            "args": [{
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "username obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "password obtained from IBM Bluemix.",
+                    "required": true
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }, {
+            "name": "getClassifierInformation",
+            "description": "Returns status and other information about a classifier.",
+            "args": [{
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "username obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "password obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "classifierId",
+                    "type": "String",
+                    "info": "Classifier ID to query.",
+                    "required": true
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }, {
+            "name": "classify",
+            "description": "Returns label information for the input.",
+            "args": [{
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "username obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "password obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "classifierId",
+                    "type": "String",
+                    "info": "Classifier ID to query.",
+                    "required": true
+                }, {
+                    "name": "text",
+                    "type": "String",
+                    "info": "Phrase to classify.",
+                    "required": true
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }, {
+            "name": "deleteClassifier",
+            "description": "Deletes a classifier.",
+            "args": [{
+                    "name": "username",
+                    "type": "credentials",
+                    "info": "username obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "password",
+                    "type": "credentials",
+                    "info": "password obtained from IBM Bluemix.",
+                    "required": true
+                }, {
+                    "name": "classifierId",
+                    "type": "String",
+                    "info": "Classifier ID to delete.",
+                    "required": true
+                }],
+            "callbacks": [{
+                    "name": "error",
+                    "info": "Error"
+                }, {
+                    "name": "success",
+                    "info": "Success"
+                }]
+        }]
 }

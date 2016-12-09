@@ -1,5 +1,5 @@
 # IBMWatsonNaturalLanguageClassifier Package
-The Natural Language Classifier service can help your application understand the language of short texts and make predictions about how to handle them.
+Interpret natural language with custom classifiers.
 * Domain: ibm.com
 * Credentials: username, password
 

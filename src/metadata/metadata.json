@@ -1,7 +1,7 @@
 {
     "package": "IBMWatsonNLC",
     "tagline": "IBM Watson Natural Language Classifier API",
-    "description": "The Natural Language Classifier service can help your application understand the language of short texts and make predictions about how to handle them.",
+    "description": "Interpret natural language with custom classifiers.",
     "image": "http:\/\/logo.clearbit.com\/bluemix.com",
     "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-IBMWatsonNaturalLanguageClassifier-package",
     "keywords": ["API", "training"],

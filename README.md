@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/IBMWatsonNLC/functions?utm_source=RapidAPIGitHub_IBMWatsonNLCFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # IBMWatsonNaturalLanguageClassifier Package
 Interpret natural language with custom classifiers.
 * Domain: ibm.com

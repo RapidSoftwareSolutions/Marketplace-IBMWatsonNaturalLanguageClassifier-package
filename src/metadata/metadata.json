@@ -29,7 +29,8 @@
                     "required": true
                 }, {
                     "name": "language",
-                    "type": "String",
+                    "type": "Select",
+                    "options": ["en","ar","fr","de","it","ja","pt","es"],
                     "info": "The language of the data. Specify the language with the 2-letter primary language code as assigned in ISO standard 639. Supported languages are English (en), Arabic (ar), French (fr), German, (de), Italian (it), Japanese (ja), Portuguese (pt), and Spanish (es).",
                     "required": true
                 }, {

@@ -2,7 +2,7 @@
 
 # IBMWatsonNaturalLanguageClassifier Package
 Interpret natural language with custom classifiers.
-* Domain: ibm.com
+* Domain: [ibm.com](https://ibm.com)
 * Credentials: username, password
 
 ## How to get credentials: 
@@ -19,7 +19,7 @@ Sends data to create and train a classifier and returns information about the ne
 | username    | credentials| Required: username obtained from IBM Bluemix.
 | password    | credentials| Required: password obtained from IBM Bluemix.
 | trainingData| File       | Required: Training data In the CSV format. Each text value must have at least one class. The data can include up to 15,000 records.
-| language    | String     | Required: The language of the data. Specify the language with the 2-letter primary language code as assigned in ISO standard 639. Supported languages are English (en), Arabic (ar), French (fr), German, (de), Italian (it), Japanese (ja), Portuguese (pt), and Spanish (es).
+| language    | String     | Required: The language of the data. Specify the language with the 2-letter primary language code as assigned in ISO standard 639. Supported languages are English (en), Arabic (ar), French (fr), German, (de), Italian (it), Japanese (ja),Korean (ko),Portuguese (pt), and Spanish (es).
 | name        | String     | Optional: The name of the data to identify the classifier.
 
 #### trainingData structure
